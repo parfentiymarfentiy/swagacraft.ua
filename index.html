@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwagaCraft - Легендарный Minecraft Сервер</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="minecraft-loader">
+                <div class="mc-block"></div>
+                <div class="mc-block"></div>
+                <div class="mc-block"></div>
+            </div>
+            <p>Загрузка SwagaCraft...</p>
+        </div>
+    </div>
+
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- 3D Scene Container -->
+    <div id="threejs-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>Swaga<span>Craft</span></h1>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Главная</a>
+                <a href="#about" class="nav-link">О сервере</a>
+                <a href="#features" class="nav-link">Особенности</a>
+                <a href="#gallery" class="nav-link">Галерея</a>
+                <a href="#staff" class="nav-link">Команда</a>
+                <a href="#rules" class="nav-link">Правила</a>
+                <a href="#vote" class="nav-link">Голосование</a>
+                <a href="#shop" class="nav-link">Донат</a>
+                <a href="#contact" class="nav-link">Контакты</a>
+            </div>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title animate__animated animate__fadeInDown">
+                    Добро пожаловать на <span>SwagaCraft</span>
+                </h1>
+                <p class="hero-subtitle animate__animated animate__fadeInUp">
+                    Легендарный Minecraft сервер с уникальными модами и комьюнити
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>280+</h3>
+                        <p>Игроков онлайн</p>
+                    </div>
+                    <div class="stat">
+                        <h3>24/7</h3>
+                        <p>Стабильная работа</p>
+                    </div>
+                    <div class="stat">
+                        <h3>50+</h3>
+                        <p>Модов и Плагинов</p>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="connectToServer()">
+                        <i class="fas fa-play"></i>
+                        Подключиться
+                    </button>
+                    <button class="btn-secondary" onclick="scrollToSection('about')">
+                        <i class="fas fa-info-circle"></i>
+                        Узнать больше
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-islands">
+                    <div class="island island-1"></div>
+                    <div class="island island-2"></div>
+                    <div class="island island-3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">О нашем сервере</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Защита</h3>
+                    <p>Мощная античит система и защита от злоумышленников</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Производительность</h3>
+                    <p>Высокопроизводительное железо для комфортной игры</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Сообщество</h3>
+                    <p>Активное и дружелюбное сообщество игроков</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Обновления</h3>
+                    <p>Регулярные обновления и новые фичи</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Особенности сервера</h2>
+            <div class="features-grid">
+                <!-- Features will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Галерея</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <div class="gallery-content">
+                        <h3>Главный хаб</h3>
+                        <p>Уникальный дизайн с телепортами</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-content">
+                        <h3>PvP Арена</h3>
+                        <p>Ежедневные битвы и турниры</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Staff Section -->
+    <section id="staff" class="staff">
+        <div class="container">
+            <h2 class="section-title">Наша команда</h2>
+            <div class="staff-grid">
+                <!-- Staff members will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Rules Section -->
+    <section id="rules" class="rules">
+        <div class="container">
+            <h2 class="section-title">Правила сервера</h2>
+            <div class="rules-content">
+                <!-- Rules will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Vote Section -->
+    <section id="vote" class="vote">
+        <div class="container">
+            <h2 class="section-title">Голосование за сервер</h2>
+            <div class="vote-grid">
+                <!-- Vote buttons will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="shop">
+        <div class="container">
+            <h2 class="section-title">Донат магазин</h2>
+            <div class="shop-grid">
+                <!-- Shop items will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Свяжитесь с нами</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-discord"></i>
+                        <h3>Discord</h3>
+                        <p>discord.gg/https://discord.gg/cPfyTZGGcV</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>swagacraft@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-vk"></i>
+                        <h3>VK</h3>
+                        <p>vk.com/swagacraft</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Swaga<span>Craft</span></h2>
+                    <p>Лучший Minecraft сервер 2025</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Главная</a>
+                    <a href="#about">О сервере</a>
+                    <a href="#rules">Правила</a>
+                    <a href="#contact">Контакты</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SwagaCraft. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Connection Modal -->
+    <div id="connectionModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Подключение к серверу</h2>
+            <div class="server-info">
+                <p><strong>IP адрес:</strong> <span id="serverIp">play.swagacraft.ru</span></p>
+                <p><strong>Версия:</strong> 1.16.5 - 1.20.1</p>
+                <button class="btn-copy" onclick="copyIP()">
+                    <i class="fas fa-copy"></i> Скопировать IP
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/threejs-scene.js"></script>
+</body>
+</html>
